@@ -1,0 +1,3 @@
+(require 'elscreen)
+(elscreen-start)
+

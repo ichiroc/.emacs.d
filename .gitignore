@@ -1,0 +1,9 @@
+*~
+*.elc
+*#
+#*
+projectile.cache
+site-lisp/el-get/
+flycheck_*
+var/
+private/
