@@ -1,5 +1,6 @@
 (defvar my-emacs-var-dir "~/.emacs.d/var/")
 (defvar my-emacs-conf-dir "~/.emacs.d/conf.d/")
-
-
+(defvar my-org-directory "~/org")
+(defvar my-org-mobile-directory "~/org/MobileOrg")
+(defvar my-org-agenda-files '("tasks.org"))
 (provide 'init-variables)

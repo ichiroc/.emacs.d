@@ -8,7 +8,7 @@
 					; mobileorg を使う為の設定
 
 (setq org-mobile-directory my-org-mobile-directory)
-(setq org-mobile-inbox-for-pull (concat org-directory "tasks.org"))
+(setq org-mobile-inbox-for-pull (concat org-directory (car my-org-agenda-files)))
 
 ;; org.txt も対象にする。
 (add-to-list 'auto-mode-alist '("\\.org\\.txt" . org-mode))
