@@ -3,3 +3,5 @@
 (define-key ac-completing-map (kbd "C-n") 'ac-next)
 (define-key ac-completing-map (kbd "C-p") 'ac-previous)
 
+(require 'auto-complete-config)
+(ac-config-default)
