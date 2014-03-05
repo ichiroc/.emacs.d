@@ -2,9 +2,9 @@
 
 (setq evil-mode-line-color
       '((normal . "salmon4")
-	(motion . "salmon3")
+	(motion . "salmon1")
 	(insert . "#575735")
 	(replace . "#575735")
 	(operator . "DarkSeaGreen4")
 	(visual . "SteelBlue4")
-	(emacs . "#8c5353")))
+	(emacs . "slate blue")))
