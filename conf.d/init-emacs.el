@@ -30,4 +30,7 @@
 ;; don't save backup files in original file's directory.
 (setq backup-directory-alist `((".*" . ,(concat my-emacs-var-dir "backup-files"))))
 
+;; setup find-function keys e.g) C-x F
+(find-function-setup-keys)
+
 (provide 'init-emacs)
