@@ -4,16 +4,17 @@
  
   - All packages are installed by el-get.
     - Package files are not included.
-    - Instead of all packages used are indicated in "*conf.d/init-el-get.el*".
-  - Configurations and initializations are all in *conf.d*.
+    - Instead of it all packages used are indicated in "*conf.d/init-el-get.el*".
+  - All configurations and initializations are in *conf.d*.
   - Small functions defined by me are in *site-lisp*.
   - Temporary files are in *var*.
+  - Files which include private settings are in *private*.
   
 * If you will try this
   1. Clone this repository at ~/.emacs.d. 
   2. Open Emacs.
   3. Wait a moment. First setup procees takes a while.(and network required.)
   
-  I use it with Emacs 24.3 on Windows 7 (Japanese IME patched http://sourceforge.jp/projects/gnupack/ ) and OSX
-  (Japanese IME patched http://sakito.jp/emacs/emacs24.html#ime ).
+  I use it with Emacs 24.3 on Windows 7 (Emacs Japanese IME patched http://sourceforge.jp/projects/gnupack/ ) and OSX
+  (Emacs Japanese IME patched http://sakito.jp/emacs/emacs24.html#ime ).
   
