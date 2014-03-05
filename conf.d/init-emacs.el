@@ -33,4 +33,7 @@
 ;; setup find-function keys e.g) C-x F
 (find-function-setup-keys)
 
+;; diable scroll bar
+(scroll-bar-mode -1)
+
 (provide 'init-emacs)
