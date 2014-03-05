@@ -6,6 +6,9 @@
 ;; Global key mapping
 (global-set-key (kbd "C-;") 'helm-for-files)
 
+(global-set-key (kbd "C-h C-o") 'helm-occur)
+(global-set-key (kbd "C-h <tab>") 'helm-imenu)
+
 (global-set-key (kbd "M-g o .") '(lambda () (interactive) (find-file "~/.emacs.d/init.el") ))
 
 (global-set-key (kbd "C-M-e") 'evil-emacs-state)
