@@ -7,3 +7,4 @@ site-lisp/el-get/
 flycheck_*
 var/
 private/
+conf.d/snippets
