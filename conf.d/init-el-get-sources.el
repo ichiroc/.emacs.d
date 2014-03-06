@@ -52,5 +52,10 @@
 			      :url "https://github.com/magit/magit/"
 			      :depends (cl-lib git-modes)
 			      :type git)
+		       (:name yasnippet
+			      :type elpa
+			      :description "Yet another snippet extension for Emacs."
+			      :repo ("melpa" . "http://melpa.milkbox.net/packages/")
+			      )
 		       ))
 (provide 'init-el-get-sources)
