@@ -1,16 +1,14 @@
 ;;; init-org --- initialization org-mode
-;;; Commentary:
-;;; Code:
 (require 'org)
-(setq org-hide-leading-stars t)		;org-modeのスターを非表示にする
-(setq org-directory my-org-directory)
-					;org-mode のプロジェクトディレクトリを登録
-					; mobileorg を使う為の設定
+;hide leading stars.
+(setq org-hide-leading-stars t)		
 
+(setq org-directory my-org-directory)
+(setq org-id-locations-file (concat my-emacs-var-dir ".org-id-locations"))
 (setq org-mobile-directory my-org-mobile-directory)
 (setq org-mobile-inbox-for-pull (concat org-directory (car my-org-agenda-files)))
 
-;; org.txt も対象にする。
+;; treat org.txt as org-mode
 (add-to-list 'auto-mode-alist '("\\.org\\.txt" . org-mode))
 
 (setq org-todo-keywords
@@ -21,7 +19,7 @@
 )
 
                           
-;; agenda の表示の冗長性を無くす
+;; remove agenda duplicate.
 (setq org-agenda-skip-deadline-if-done t)
 (setq org-agenda-skip-scheduled-if-deadline-is-shown t)
 ;; capture template
