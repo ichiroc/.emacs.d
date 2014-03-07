@@ -3,6 +3,7 @@
 (setq el-get-dir "~/.emacs.d/site-lisp/el-get/")
 (setq package-user-dir (concat el-get-dir "package/elpa" ))
 
+
 ;;; init package *BEFORE* (el-get 'sync)
 ;; if you don't this , error occured in el-get initialization by elpa package.
 (require 'package)
@@ -18,6 +19,10 @@
        "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
     (goto-char (point-max))
     (eval-print-last-sexp)))
+
+;; prioritize elpa recipes.
+(setq el-get-recipe-path (remove el-get-recipe-path-elpa el-get-recipe-path))
+(add-to-list 'el-get-recipe-path el-get-recipe-path-elpa)
 
 ;; build "elpa" recipes at first time setup.
 (unless (file-exists-p el-get-recipe-path-elpa)
