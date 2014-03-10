@@ -45,3 +45,11 @@
 (setq org-agenda-custom-commands 
       (quote (("k" "Daily agenda and all tasks from tasks.org" ((agenda "" ((org-agenda-span (quote week)))) (alltodo "" ((org-agenda-sorting-strategy (quote (todo-state-up priority-down time-up)))))) nil nil)
 	      ("@" "Delegated tasks" search "@" ((org-agenda-sorting-strategy (quote (tag-up priority-down time-up))))))))
+
+;; reuse headline face.
+(setq org-n-level-faces 3)
+
+
+(add-hook 'kill-emacs-hook '(lambda () (interactive) 
+			      (if (y-or-n-p "Push orgfiles to MobileOrg?")
+			      (org-mobile-push))))
