@@ -36,4 +36,7 @@
 ;; diable scroll bar
 (scroll-bar-mode -1)
 
+;; set auto-save-interval 60 seconds.
+(setq auto-save-interval 60)
+
 (provide 'init-emacs)
