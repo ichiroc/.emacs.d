@@ -1,3 +1,4 @@
+(require 'edbi)
 ;; configuration for Support Oracle
 (setenv "NLS_LANG" "AMERICAN_JAPAN.UTF8")
 (autoload 'sqlplus "sqlplus" nil t)
