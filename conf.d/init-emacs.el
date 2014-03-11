@@ -29,7 +29,7 @@
 
 ;; don't save backup files in original file's directory.
 (setq backup-directory-alist `((".*" . ,(concat my-emacs-var-dir "backup-files"))))
-(setq auto-save-file-name-transforms '((".*" (concat my-emacs-var-dir "backup-files") t)))
+(setq auto-save-file-name-transforms `((".*" ,(concat my-emacs-var-dir "backup-files") t)))
 
 ;; setup find-function keys e.g) C-x F
 (find-function-setup-keys)
