@@ -15,4 +15,11 @@
 ;; set file name encoding for dired
 (setq default-file-name-coding-system 'cp932)
 
+;; enable ime in isearch mini-buffer.
+(defun w32-isearch-update ()
+  (interactive)
+  (isearch-update))
+(define-key isearch-mode-map [compend] 'w32-isearch-update)
+(define-key isearch-mode-map [kanji] 'isearch-toggle-input-method)
+
 (provide 'init-win)
