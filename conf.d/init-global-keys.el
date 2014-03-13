@@ -25,5 +25,16 @@
 (global-set-key (kbd "C-S-n") 'elscreen-create)
 (global-set-key (kbd "C-S-l") 'elscreen-next)
 (global-set-key (kbd "C-S-w") 'elscreen-kill)
+
+;; C-M-o binds split or other-window.
+(global-set-key (kbd "C-M-o") '(lambda () (interactive)
+			       (if (= (count-windows) 1)
+				   (split-window)
+				 (other-window 1))))
+;; if shift added then split-window-vertically
+(global-set-key (kbd "C-M-S-o") '(lambda () (interactive)
+			       (if (= (count-windows) 1)
+				   (split-window-vertically)
+				 (other-window 1))))
 (provide 'init-global-keys)
 ;;; init-global-keys.el ends here
