@@ -33,6 +33,7 @@
 ;;(el-get ...) must exists *AFTER* el-get-sources define.
 ;; controll init order by 3rd arg.
 (el-get 'sync '(
+		thing-opt
 		auto-complete
 		csv-mode
 		ruby-mode

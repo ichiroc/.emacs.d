@@ -26,6 +26,9 @@
 (global-set-key (kbd "C-S-l") 'elscreen-next)
 (global-set-key (kbd "C-S-w") 'elscreen-kill)
 
+(global-set-key (kbd "C-M-t") 'mark-thing)
+(global-set-key (kbd "C-M-m") 'mark-symbol)
+
 ;; C-M-o binds split or other-window.
 (global-set-key (kbd "C-M-o") '(lambda () (interactive)
 			       (if (= (count-windows) 1)
