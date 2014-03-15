@@ -29,6 +29,10 @@
 (global-set-key (kbd "C-M-t") 'mark-thing)
 (global-set-key (kbd "C-M-m") 'mark-symbol)
 
+(global-set-key (kbd "C-*") 'mc/mark-all-symbols-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-symbol-like-this)
+(global-set-key (kbd "C->") 'mc/mark-next-symbol-like-this)
+
 ;; C-M-o binds split or other-window.
 (global-set-key (kbd "C-M-o") '(lambda () (interactive)
 			       (if (= (count-windows) 1)
