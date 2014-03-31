@@ -6,6 +6,8 @@
 ;; Global key mapping
 (global-set-key (kbd "C-;") 'helm-for-files)
 
+(global-set-key (kbd "C-M-k") 'kill-whole-line)
+
 (global-set-key (kbd "C-h C-o") 'helm-occur)
 (global-set-key (kbd "C-h C-i") 'helm-imenu)
 
