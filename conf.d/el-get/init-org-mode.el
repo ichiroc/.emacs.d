@@ -51,5 +51,15 @@
 
 
 (add-hook 'kill-emacs-hook '(lambda () (interactive) 
+			      (when (and (fboundp 'org-clocking-p) (org-clocking-p))
+				(org-clock-out))
 			      (if (y-or-n-p "Push orgfiles to MobileOrg?")
-			      (org-mobile-push))))
+				  (org-mobile-push))))
+
+;; Export settings.
+;; Remove HTML footer.
+(setq org-html-postamble nil)
+;; Hide headline numbers.
+(setq org-export-with-section-numbers nil)
+;; Remove Toc
+(setq org-export-with-toc nil)
