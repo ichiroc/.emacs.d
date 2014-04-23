@@ -45,5 +45,8 @@
 			       (if (= (count-windows) 1)
 				   (split-window-vertically)
 				 (other-window 1))))
+
+(global-set-key (kbd "C-x a a") 'my-execute-current-buffer)
+
 (provide 'init-global-keys)
 ;;; init-global-keys.el ends here

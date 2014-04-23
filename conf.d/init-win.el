@@ -43,4 +43,24 @@
                                      (sleep-for 1))
                                    (kill-buffer clock-process-buffer))))
 
+
+(defun my-execute-current-buffer ()
+  "Execute current buffer with Windows association."
+  (interactive)
+  (let ((exec-command (read-string "Command?:")))
+    (message (concat  exec-command " \"" buffer-file-name "\"" )
+             (async-shell-command (concat  exec-command " \"" buffer-file-name "\"" )))))
+
+
+(defun htmlize-current-buffer()
+  (interactive)
+  "View current buffer in browser. And it's htmlized."
+  (let ((temp-directory "~/.emacs.d/junk/")
+	(temp-file (format-time-string "%Y%m%d-%H%M%S.html" ))
+	(current-buffer (current-buffer)))
+    (switch-to-buffer (htmlize-buffer))
+    (write-file (concat temp-directory temp-file) nil)
+    (switch-to-buffer current-buffer)
+    (start-process "cygstart" "cygstart-buffer" "cygstart.exe"
+		   (concat "" (expand-file-name (concat temp-directory temp-file)))) ""))
 (provide 'init-win)
