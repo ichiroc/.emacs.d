@@ -22,6 +22,9 @@
 (define-key isearch-mode-map [compend] 'w32-isearch-update)
 (define-key isearch-mode-map [kanji] 'isearch-toggle-input-method)
 
+;; Initialize w32-ime
+;;(w32-ime-initialize) 
+
 ;; Execute TaskViewer for Windows when clocked in.
 (defvar my-org-clock-in-shell-buffer-name "*ORG-CLOCK-IN-BUFFER*")
 (add-hook 'org-clock-in-hook '(lambda () (interactive)
@@ -38,9 +41,10 @@
 (add-hook 'org-clock-out-hook '(lambda () (interactive)
                                  (shell-command "taskkill /im:taskviewer.exe")
                                  (let ((clock-process-buffer (get-buffer my-org-clock-in-shell-buffer-name)))
-                                   (while (process-live-p
-                                           (get-buffer-process clock-process-buffer))
-                                     (sleep-for 1))
+				   (with-timeout (10 (kill-buffer clock-process-buffer))
+				     (while (process-live-p
+					     (get-buffer-process clock-process-buffer))
+				       (sleep-for 1)))
                                    (kill-buffer clock-process-buffer))))
 
 

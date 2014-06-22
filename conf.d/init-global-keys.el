@@ -7,11 +7,20 @@
 (global-set-key (kbd "C-;") 'helm-for-files)
 
 (global-set-key (kbd "C-M-k") 'kill-whole-line)
-
+(global-set-key (kbd "C-o") '(lambda ()(interactive) 
+			       (end-of-line)
+			       (newline-and-indent)))
+(global-set-key (kbd "C-S-o") '(lambda ()(interactive) 
+			       (beginning-of-line)
+			       (insert-char 10)
+			       (previous-line)
+			       (indent-relative)))
 (global-set-key (kbd "C-h C-o") 'helm-occur)
 (global-set-key (kbd "C-h C-i") 'helm-imenu)
 
-(global-set-key (kbd "M-g o .") '(lambda () (interactive) (find-file "~/.emacs.d/init.el") ))
+(global-set-key (kbd "M-g f .") '(lambda () (interactive) (find-file "~/.emacs.d/init.el") ))
+
+(global-set-key (kbd "C-x a f") 'find-file-at-point)
 
 (global-set-key (kbd "C-M-e") 'evil-emacs-state)
 
@@ -35,6 +44,8 @@
 (global-set-key (kbd "C-<") 'mc/mark-previous-symbol-like-this)
 (global-set-key (kbd "C->") 'mc/mark-next-symbol-like-this)
 
+(global-set-key (kbd "C-c C-x C-j") 'org-clock-goto)
+
 ;; C-M-o binds split or other-window.
 (global-set-key (kbd "C-M-o") '(lambda () (interactive)
 			       (if (= (count-windows) 1)
@@ -48,5 +59,9 @@
 
 (global-set-key (kbd "C-x a a") 'my-execute-current-buffer)
 
+(global-set-key (kbd "M-g f t") '(lambda ()(interactive) (find-file (concat my-org-directory (car my-org-agenda-files)))))
+(global-set-key (kbd "M-g f g") '(lambda ()(interactive) (find-file (concat my-emacs-conf-dir "init-global-keys.el"))))
+
+(global-set-key (kbd "C-x C-v") 'evil-local-mode)
 (provide 'init-global-keys)
 ;;; init-global-keys.el ends here

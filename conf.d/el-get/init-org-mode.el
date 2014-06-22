@@ -32,7 +32,7 @@
 			      ("m" "Memo" entry (file (car org-agenda-files)) "* %?
   :PROPERTIES:
   :CREATED_AT: %U
-  :END:" :empty-lines 1 t TODO) ("x" "From external" entry (file+headline (concat org-directory "tasks.org") "Task Stuck") "* TODO %? %a   :outlook:
+  :END:" :empty-lines 1 t TODO) ("x" "From external" entry (file+headline (concat org-directory "tasks.org") "Task Stuck") "* TODO %? %a
   DEADLINE: %t
   :PROPERTIES:
   :CREATED_AT: %U
@@ -42,9 +42,9 @@
 
 
 ;; agenda
-(setq org-agenda-custom-commands 
-      (quote (("k" "Daily agenda and all tasks from tasks.org" ((agenda "" ((org-agenda-span (quote week)))) (alltodo "" ((org-agenda-sorting-strategy (quote (todo-state-up priority-down time-up)))))) nil nil)
-	      ("@" "Delegated tasks" search "@" ((org-agenda-sorting-strategy (quote (tag-up priority-down time-up))))))))
+;; (setq org-agenda-custom-commands 
+;;       (quote (("k" "Daily agenda and all tasks from tasks.org" ((agenda "" ((org-agenda-span (quote week)))) (alltodo "" ((org-agenda-sorting-strategy (quote (todo-state-up priority-down time-up)))))) nil nil)
+;; 	      ("@" "Delegated tasks" search "@" ((org-agenda-sorting-strategy (quote (tag-up priority-down time-up))))))))
 
 ;; reuse headline face.
 (setq org-n-level-faces 3)
@@ -55,6 +55,11 @@
 				(org-clock-out))
 			      (if (y-or-n-p "Push orgfiles to MobileOrg?")
 				  (org-mobile-push))))
+(add-hook 'emacs-startup-hook '(lambda () (interactive) 
+			      (when (and (fboundp 'org-clocking-p) (org-clocking-p))
+				(org-clock-out))
+			      (if (y-or-n-p "Pull orgfiles from MobileOrg?")
+				  (org-mobile-pull))))
 
 ;; Export settings.
 ;; Remove HTML footer.
@@ -63,3 +68,13 @@
 (setq org-export-with-section-numbers nil)
 ;; Remove Toc
 (setq org-export-with-toc nil)
+;; Priority settings
+(setq org-default-priority 67)
+(setq org-lowest-priority 68)
+(require 'org-agenda)
+;; Set deadline quickly
+(define-key org-agenda-mode-map (kbd "C-t") '(lambda () (interactive) (org-agenda-deadline nil "+0d"))) ;today
+(define-key org-agenda-mode-map (kbd "C-w") '(lambda () (interactive) (org-agenda-deadline nil "+1d"))) ;tomorrow
+(define-key org-agenda-mode-map (kbd "C-e") '(lambda () (interactive) (org-agenda-deadline nil "+7d"))) ; next week
+;; Refile level 2 headlines.
+(setq org-refile-targets '((nil . (:maxlevel . 2))))

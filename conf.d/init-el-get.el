@@ -62,6 +62,8 @@
 		evil-textobj-between
 		dos
 		my-magit
+		yasnippet
+		edit-server
 		))
 
 (provide 'init-el-get)
