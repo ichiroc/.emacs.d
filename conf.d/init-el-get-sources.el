@@ -52,6 +52,9 @@
 			      :url "https://github.com/magit/magit/"
 			      :depends (cl-lib git-modes)
 			      :type git)
+		       (:name markdown-mode
+			      :type http
+			      :url "http://jblevins.org/git/markdown-mode.git/plain/markdown-mode.el")
 		       (:name yasnippet
 			      :type elpa
 			      :description "Yet another snippet extension for Emacs."

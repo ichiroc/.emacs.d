@@ -1,5 +1,5 @@
 ;; init customize
-(setq custom-file (concat my-emacs-conf-dir "~/.emacs.d/conf.d/custom.el"))
+(setq custom-file (concat my-emacs-conf-dir "custom.el"))
 (load custom-file)
 ;; init var files location.
 (setq server-auth-dir (concat my-emacs-var-dir "server/"))
@@ -11,7 +11,10 @@
 ;; truncate line
 (set-default 'truncate-lines t)
 
-(setq recentf-max-saved-items 1000)
+(setq recentf-max-saved-items 30)
+(require 'recentf)
+(recentf-load-list)
+(recentf-cleanup)
 
 ;; change owner user to self at '~/.emacs.d/server' directory.
 (server-start)

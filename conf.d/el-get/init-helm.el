@@ -17,3 +17,7 @@
 
 ;; disable helm-find-files for UNC path.
 (add-to-list 'helm-completing-read-handlers-alist '(find-file . nil))
+(add-to-list 'helm-completing-read-handlers-alist '(write-file . nil))
+(add-to-list 'helm-completing-read-handlers-alist '(dired-do-copy . nil))
+(add-to-list 'helm-completing-read-handlers-alist '(find-file-at-point . nil))
+(add-to-list 'helm-completing-read-handlers-alist '(dired-do-rename . nil))

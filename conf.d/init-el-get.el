@@ -20,10 +20,6 @@
     (goto-char (point-max))
     (eval-print-last-sexp)))
 
-;; prioritize elpa recipes.
-(setq el-get-recipe-path (remove el-get-recipe-path-elpa el-get-recipe-path))
-(add-to-list 'el-get-recipe-path el-get-recipe-path-elpa)
-
 ;; build "elpa" recipes at first time setup.
 (unless (file-exists-p el-get-recipe-path-elpa)
   (el-get-elpa-build-local-recipes nil t))
@@ -33,6 +29,7 @@
 ;;(el-get ...) must exists *AFTER* el-get-sources define.
 ;; controll init order by 3rd arg.
 (el-get 'sync '(
+		markdown-mode
 		thing-opt
 		auto-complete
 		csv-mode
@@ -51,7 +48,7 @@
 		org-mode
 		org-protocol-jekyll
 		multiple-cursors
-		js3-mode
+		js2-mode
 		helm
 		helm-descbinds
 		grep-edit
@@ -65,6 +62,8 @@
 		evil-textobj-between
 		dos
 		my-magit
+		yasnippet
+		edit-server
 		))
 
 (provide 'init-el-get)
