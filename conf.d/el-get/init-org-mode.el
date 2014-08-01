@@ -1,5 +1,7 @@
 ;;; init-org --- initialization org-mode
 (require 'org)
+(defadvice org-todo (before my-disable-ime-before-org-todo)
+  (w32-ime-state-switch nil))
 ;hide leading stars.
 (setq org-hide-leading-stars t)		
 
@@ -12,7 +14,7 @@
 (add-to-list 'auto-mode-alist '("\\.org\\.txt" . org-mode))
 
 (setq org-todo-keywords
-        '((sequence "PROJ(p)" "TODO(t)" "WAIT(w)" "|" "DEFERRED(d)" "CANCELED(c)" "DONE(x)")))
+        '((sequence "*MSN(m)" "PROJ(p)" "TODO(t)" "WAIT(w)" "|" "DEFERRED(d)" "CANCELED(c)" "DONE(x)")))
 
 (dolist (org-file-for-agenda my-org-agenda-files)
    (add-to-list 'org-agenda-files (concat org-directory org-file-for-agenda) t)

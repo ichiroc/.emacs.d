@@ -67,5 +67,15 @@
     (switch-to-buffer current-buffer)
     (start-process "cygstart" "cygstart-buffer" "cygstart.exe"
 		   (concat "" (expand-file-name (concat temp-directory temp-file)))) ""))
+;; frame size
+(setq default-frame-alist
+      '((top . 0)
+        (left . 0 )
+        (width . 126)
+        (height . 44)
+        (tool-bar-lines . 0)
+        (font . "-outline-Takaoゴシック-normal-normal-normal-mono-19-*-*-*-c-*-iso8859-1")
+        ))
+
 (provide 'init-win)
->>>>>>> 5b770a10bd8ad975f407fcb0b301c2066e3ba4dd
+

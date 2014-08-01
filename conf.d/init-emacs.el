@@ -11,7 +11,9 @@
 ;; truncate line
 (set-default 'truncate-lines t)
 
-(setq recentf-max-saved-items 30)
+(setq recentf-max-saved-items 2000)
+(setq recentf-auto-cleanup (* 60 60))
+
 (require 'recentf)
 (recentf-load-list)
 (recentf-cleanup)
