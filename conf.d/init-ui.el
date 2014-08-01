@@ -4,10 +4,10 @@
 (setq default-frame-alist
       '((top . 0)
         (left . 0 )
-        (width . 157)
-        (height . 54)
+        (width . 126)
+        (height . 44)
         (tool-bar-lines . 0)
-        (font . "-outline-Takaoゴシック-normal-normal-normal-mono-16-*-*-*-c-*-iso8859-1")
+        (font . "-outline-Takaoゴシック-normal-normal-normal-mono-19-*-*-*-c-*-iso8859-1")
         ))
 ;; GUI parts
 (tool-bar-mode -1)

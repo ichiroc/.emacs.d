@@ -4,7 +4,6 @@
 ;;; Code:
 
 ;; Global key mapping
-(global-set-key (kbd "C-;") 'helm-for-files)
 
 (global-set-key (kbd "C-M-k") 'kill-whole-line)
 (global-set-key (kbd "C-o") '(lambda ()(interactive) 
@@ -15,8 +14,6 @@
 			       (insert-char 10)
 			       (previous-line)
 			       (indent-relative)))
-(global-set-key (kbd "C-h C-o") 'helm-occur)
-(global-set-key (kbd "C-h C-i") 'helm-imenu)
 
 (global-set-key (kbd "M-g f .") '(lambda () (interactive) (find-file "~/.emacs.d/init.el") ))
 
@@ -58,9 +55,16 @@
 				 (other-window 1))))
 
 (global-set-key (kbd "C-x a a") 'my-execute-current-buffer)
-
-(global-set-key (kbd "M-g f t") '(lambda ()(interactive) (find-file (concat my-org-directory (car my-org-agenda-files)))))
-(global-set-key (kbd "M-g f g") '(lambda ()(interactive) (find-file (concat my-emacs-conf-dir "init-global-keys.el"))))
+		
+(global-set-key (kbd "M-g t") '(lambda ()(interactive) (find-file (concat my-org-directory (car my-org-agenda-files)))))
+	
+;; helm
+(global-set-key (kbd "C-; C-;") 'helm-for-files)
+(global-set-key (kbd "C-; b") 'helm-bookmarks)
+(global-set-key (kbd "C-; r") 'helm-recentf)
+(global-set-key (kbd "C-; g") 'helm-google-suggest)
+(global-set-key (kbd "C-; o") 'helm-occur)
+(global-set-key (kbd "C-; i") 'helm-imenu)
 
 (global-set-key (kbd "C-x C-v") 'evil-local-mode)
 (provide 'init-global-keys)
